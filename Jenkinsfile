@@ -15,7 +15,7 @@ pipeline{
       }
       stage ('Clean containers') {
          steps{
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+            catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
                sshagent(credentials : ['dcs_1']) {
                   sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
                   sh 'ssh -v root@164.128.168.166'
