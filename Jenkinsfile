@@ -18,9 +18,7 @@ pipeline{
             sshagent(credentials : ['dcs_1']) {
                sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
                sh 'ssh -v root@164.128.168.166'
-               sh 'ssh -v root@164.128.168.166 docker ps -aq'
-               sh 'ssh -v root@164.128.168.166 xargs docker stop'
-               sh 'ssh -v root@164.128.168.166 xargs docker rm'
+               sh 'ssh -v root@164.128.168.166 (docker ps -aq | xargs docker stop | xargs docker rm)'
             }
          }
       }
