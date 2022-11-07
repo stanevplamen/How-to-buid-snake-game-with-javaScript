@@ -15,13 +15,11 @@ pipeline{
       }
       stage ('Clean containers') {
          steps{
-            catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-               sshagent(credentials : ['dcs_1']) {
-                  sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
-                  sh 'ssh -v root@164.128.168.166'
-                  sh 'ssh -v root@164.128.168.166 docker stop $$(docker ps -a -q)'
-                  sh 'ssh -v root@164.128.168.166 docker rm $$(docker ps -a -q)'
-               }
+            sshagent(credentials : ['dcs_1']) {
+               sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
+               sh 'ssh -v root@164.128.168.166'
+               sh 'ssh -v root@164.128.168.166 docker stop plamen333/ira:1.0.0'
+               sh 'ssh -v root@164.128.168.166 docker container prune'
             }
          }
       }
