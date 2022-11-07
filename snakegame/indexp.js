@@ -1,3 +1,4 @@
+//https://www.section.io/engineering-education/how-to-build-a-snake-game-with-javascript/
 const canvas=document.getElementById('game');
 const ctx=canvas.getContext('2d');
 //increase snake size 
@@ -90,17 +91,16 @@ function isGameOver(){
 
 // score function
 function drawScore(){
-ctx.fillStyle="white"// set our text color to white
-ctx.font="10px verdena"//set font size to 10px of font family verdena
-ctx.fillText("Score: " +score, canvas.clientWidth-50,10);// position our score at right hand corner 
-
+    ctx.fillStyle="white"// set our text color to white
+    ctx.font="10px verdena"//set font size to 10px of font family verdena
+    ctx.fillText("Score: " +score, canvas.clientWidth-50,10);// position our score at right hand corner 
 }
 
 // clear our screen
  function clearScreen(){
 
-ctx.fillStyle= 'black'// make screen black
-ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight)// black color start from 0px left, right to canvas width and canvas height
+    ctx.fillStyle= 'black'// make screen black
+    ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight)// black color start from 0px left, right to canvas width and canvas height
 
  }
  function drawSnake(){
@@ -145,7 +145,7 @@ ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight)// black color start fro
  //add event listener to our body
  document.body.addEventListener('keydown', keyDown);
 
-function keyDown()
+function keyDown(event)
 //up
 {
     if(event.keyCode==38){
@@ -172,7 +172,7 @@ function keyDown()
         xvelocity=-1;
     }
     //right
-    if(event.keyCode==48){
+    if(event.keyCode==39){
         if(xvelocity==-1)
         return;
         yvelocity=0;
