@@ -19,10 +19,9 @@ pipeline{
                   sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
                   sh 'ssh -v root@164.128.168.166'
                   sh 'ssh -v root@164.128.168.166 docker pull plamen333/ira:1.0.0'
-                  sh 'ssh -v root@164.128.168.166 docker run plamen333/ira:1.0.0'
+                  sh 'ssh -v root@164.128.168.166 docker run -d -p 80:80 ira:1.0.0'
             }
          }
       }
    }
 }
-
