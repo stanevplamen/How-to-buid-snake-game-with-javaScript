@@ -1,6 +1,11 @@
 pipeline{
    agent any
    stages{
+      stage ('Clean containers from jenkins local') {
+         steps {
+            sh 'sudo docker compose down --rmi all'
+         }
+      }
       stage('Start container') {
          steps {
             sh 'sudo docker compose up -d --no-color --wait'
@@ -11,11 +16,6 @@ pipeline{
          steps {
             sh 'sudo docker image tag swc-pss:0.0.4 plamen333/ira:1.0.4'
             sh 'sudo docker image push plamen333/ira:1.0.4'
-         }
-      }
-      stage ('Clean containers from jenkins local') {
-         steps {
-            sh 'sudo docker compose down -rmi'
          }
       }
       stage ('Clean containers from dkr host') {
