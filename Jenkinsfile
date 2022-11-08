@@ -13,17 +13,16 @@ pipeline{
             sh 'sudo docker image push plamen333/ira:1.0.0'
          }
       }
-      // stage ('Clean containers') {
-      //    steps{
-      //       sshagent(credentials : ['dcs_1']) {
-      //          sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
-      //          sh 'ssh -v root@164.128.168.166'
-      //          sh 'scp -r root@164.128.168.166:/tmp'
-      //          sh 'ssh -v root@164.128.168.166 cd /tmp'
-      //          sh 'ssh -v root@164.128.168.166 docker compose down'
-      //       }
-      //    }
-      // }
+      stage ('Clean containers') {
+         steps{
+            sshagent(credentials : ['dcs_1']) {
+                  sh 'ssh -o StrictHostKeyChecking=no root@164.128.168.166 uptime'
+                  sh 'ssh -v root@164.128.168.166'
+                  sh 'ssh -v root@164.128.168.166 "docker stop $(docker ps -q)"'
+                  sh 'ssh -v root@164.128.168.166 "docker rm $(docker ps -a -q)"'
+            }
+         }
+      }
       stage ('Deploy container from docker') {
          steps{
             sshagent(credentials : ['dcs_1']) {
