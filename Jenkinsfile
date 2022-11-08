@@ -9,7 +9,7 @@ pipeline{
       }
       stage('Deploy container to repo DockerHub') {
          steps {
-            sh 'sudo docker image tag swc-pss:latest plamen333/ira:1.0.4'
+            sh 'sudo docker image tag swc-pss:0.0.4 plamen333/ira:1.0.4'
             sh 'sudo docker image push plamen333/ira:1.0.4'
          }
       }

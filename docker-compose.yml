@@ -5,6 +5,7 @@ services:
   nginx:
     container_name: swc-pss
     image: swc-pss
+    tag: 0.0.4
     build:
       context: .
       dockerfile: Dockerfile
