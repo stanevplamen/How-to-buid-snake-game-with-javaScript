@@ -1,14 +1,27 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Our Funky HTML Page</title>
-    <meta name="description" content="Our first page">
-    <meta name="keywords" content="html tutorial template">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snake game</title>
+   <style>
+       body{
+           margin: 0px;
+           padding: 0px;
+           display: flex;
+            flex-direction: column; /* arrage items on top of the other */
+            justify-content: center;
+            align-items: center;
+       }
+       canvas{
+           box-shadow: black 20px 10px 50px; /*elevate our canvas*/
+
+       }
+   </style>
 </head>
-
 <body>
-    Content goes here.
+    <canvas id="game" width="400" height="400"/>
+    <script src="indexp.js"></script>
 </body>
-
 </html>
