@@ -181,3 +181,18 @@ function keyDown(event)
 }
 
  drawGame(); 
+
+ /**
+  * show code
+  * show github
+  * show jenkins http://localhost:8080/
+  * show github ui https://html-preview.github.io/?url=https://github.com/stanevplamen/How-to-buid-snake-game-with-javaScript/blob/main/names/ziyad.html
+  * show localhost http://localhost:80/
+  * change
+  */
+
+ /**
+  * general cloud and swisscom
+  * systems and orchestration
+  * build game, deploy cicd, git, containers
+  */
