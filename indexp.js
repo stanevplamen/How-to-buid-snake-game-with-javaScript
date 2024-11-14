@@ -10,7 +10,7 @@ constructor(x, y){
 
 }
 
-let speed=6;
+let speed=20;
 let tileCount=20; 
 
 let tileSize=canvas.clientWidth/tileCount-2;
@@ -129,7 +129,7 @@ function drawScore(){
      
  }
  function drawApple(){
-     ctx.fillStyle="red";
+     ctx.fillStyle="blue";
      ctx.fillRect(appleX*tileCount, appleY*tileCount, tileSize, tileSize)
  }
  // check for collision and change apple position
