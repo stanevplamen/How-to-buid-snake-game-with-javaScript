@@ -10,7 +10,7 @@ constructor(x, y){
 
 }
 
-let speed=20;
+let speed=6;
 let tileCount=20; 
 
 let tileSize=canvas.clientWidth/tileCount-2;
