@@ -128,7 +128,7 @@ function drawScore(){
      
  }
  function drawApple(){
-     ctx.fillStyle="red";
+     ctx.fillStyle="orange";
      ctx.fillRect(appleX*tileCount, appleY*tileCount, tileSize, tileSize)
  }
  // check for collision and change apple position
