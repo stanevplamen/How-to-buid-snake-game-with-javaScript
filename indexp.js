@@ -3,14 +3,13 @@ const canvas=document.getElementById('game');
 const ctx=canvas.getContext('2d');
 //increase snake size 
 class snakePart{
-constructor(x, y){
-    this.x=x;
-    this.y=y;
+    constructor(x, y){
+        this.x=x;
+        this.y=y;
+    }
 }
 
-}
-
-let speed=6;
+let speed=5;
 let tileCount=20; 
 
 let tileSize=canvas.clientWidth/tileCount-2;
@@ -91,8 +90,8 @@ function isGameOver(){
 
 // score function
 function drawScore(){
-    ctx.fillStyle="white"// set our text color to white
-    ctx.font="10px verdena"//set font size to 10px of font family verdena
+    ctx.fillStyle="pink"// set our text color to white
+    ctx.font="14px verdena"//set font size to 10px of font family verdena
     ctx.fillText("Score: " +score, canvas.clientWidth-50,10);// position our score at right hand corner 
 }
 
@@ -129,7 +128,7 @@ function drawScore(){
      
  }
  function drawApple(){
-     ctx.fillStyle="blue";
+     ctx.fillStyle="red";
      ctx.fillRect(appleX*tileCount, appleY*tileCount, tileSize, tileSize)
  }
  // check for collision and change apple position

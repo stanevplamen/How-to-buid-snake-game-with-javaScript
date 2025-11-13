@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Our Funky First HTML Page</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+</head>
+
+<body>
+   <h1>First test by Crysta</h1>
+   <h1 id="txt" style="color:rgb(132, 27, 27);">Sum of numbers</h1>
+   <title>Add Two Numbers</title>
+   <h1>My Basic Calculator</h1>
+    <p>input 1: <input id="input1" size="10"/></p><br>
+    <button id >+</button>
+    <p>input 2: <input id="input2" size="10"/></p><br>
+    <button id ="add" onclick="myFunction()">=</button>
+    <p>Answer:<input id="answer" size="10"/></p>
+ 
+    </p>
+
+    <script>
+
+    function myFunction() {
+        var num1 = document.getElementById("input1").value;
+        var num2 = document.getElementById("input2").value;
+        var result = Number(num1) + Number(num2);
+    
+        document.getElementById("answer").value = result;
+    }
+    
+    </script>
+
+
+</body>
+
+
+
+</html>
